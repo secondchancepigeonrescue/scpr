@@ -209,6 +209,21 @@ a {
 }
 
 /* =========================
+   SIMPLE TEXT PAGE LAYOUT
+========================= */
+
+.simple-page {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.simple-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* =========================
    ALTERNATE SECTION
 ========================= */
 
