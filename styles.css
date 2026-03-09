@@ -523,6 +523,41 @@ p, li {
 
 
 
+.blog-filters{
+  margin-bottom:30px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.blog-filters button{
+  padding:8px 14px;
+  border:none;
+  background:#6e8a6f;
+  color:white;
+  cursor:pointer;
+}
+
+.blog-filters button:hover{
+  background:#4e6b4e;
+}
+
+.post-tags{
+  margin-top:10px;
+}
+
+.tag{
+  display:inline-block;
+  font-size:12px;
+  padding:3px 8px;
+  margin-right:5px;
+  background:#e8efe8;
+  border-radius:6px;
+}
+
+
+
 /* =========================
    ARTICLES
 ========================= */
@@ -583,7 +618,7 @@ p, li {
 }
 
 .article-image {
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .article-image img {
