@@ -529,7 +529,7 @@ p, li {
 
 .content-container {
   max-width: 1000px;
-  margin: 30px 20px 0 20px;
+  margin: 30px auto;
   padding: 0 20px;
 }
 
@@ -614,8 +614,9 @@ p, li {
 ========================= */
 
 .citation-section {
-  margin-top: 60px;
-  padding-top: 30px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px 20px 0 20px;
   border-top: 1px solid #ddd;
 }
 
@@ -641,6 +642,14 @@ p, li {
 
 .citation-list a:hover {
   text-decoration: underline;
+}
+
+.content-container,
+.citation-section {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
 
 
