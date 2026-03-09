@@ -31,6 +31,12 @@ h2 {
     margin-bottom: 20px;
 }
 
+h3 {
+    font-size: 25px;
+    color: #5a2d33;
+    margin-bottom: 20px;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -57,6 +63,10 @@ a {
     letter-spacing: 4px;
     color: #b87c8b;
     margin-top: 10px;
+}
+
+p, li {
+    line-height: 1.6;
 }
 
 /* =========================
@@ -509,6 +519,128 @@ a {
   font-weight: bold;
   margin-top: 10px;
   display: inline-block;
+}
+
+
+
+/* =========================
+   ARTICLES
+========================= */
+
+.content-container {
+  max-width: 1000px;
+  margin: 30px 20px 0 20px;
+  padding: 0 20px;
+}
+
+.dropdown-section {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.dropdown-section summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: bold;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-section summary::after {
+  content: "▼";
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.dropdown-section[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-section article {
+  padding: 15px;
+}
+
+.dropdown-section article p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.dropdown-section img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.image-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.article-image {
+  max-width: 300px;
+}
+
+.article-image img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.article-image figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+  text-align: center;
+}
+
+.pink-link {
+    color: #b87c8b
+}
+
+.pink-link:hover {
+    color: gray
+}
+
+
+
+/* =========================
+   CITATIONS
+========================= */
+
+.citation-section {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #ddd;
+}
+
+.citation-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.citation-list {
+  padding-left: 20px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.citation-list li {
+  margin-bottom: 10px;
+}
+
+.citation-list a {
+  color: #2a6db0;
+  text-decoration: none;
+}
+
+.citation-list a:hover {
+  text-decoration: underline;
 }
 
 
