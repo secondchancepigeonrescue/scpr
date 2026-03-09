@@ -1,7 +1,7 @@
 const posts = [
   {
     title: "SCPR's Guide to Pigeon Care",
-    date: "unfinished: March 8th, 2026 set release date",
+    date: "March 9, 2026",
     excerpt: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more.",
     link: "/blog/scprs-guide-to-pigeon-care.html",
     image: "/blog/images/pigeoncareguide.jpg"
