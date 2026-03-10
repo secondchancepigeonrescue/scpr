@@ -16,11 +16,11 @@ const posts = [
     image:"/blog/images/arepigeonsrightforyou.jpg"
   },
   {
-    title: "Safe VS Toxic Foods For Pigeons",
-    date: "UNFINISHED",
+    title: "Greens, Fruits, & Toxic Foods",
+    date: "March 10, 2026",
     tags: ["nutrition"],
-    excerpt: "Many foods that are considered safe for other animals may be considered toxic to pigeons! It's important to understand what these are to avoid allowing your pigeon to ingest them.",
-    link: "/blog/save-vs-toxic-foods-for-pigeons.html",
+    excerpt: "Greens and vegetables can be great enrichment items! However, some foods are toxic. It's important to understand what these are to avoid allowing your pigeon to ingest them.",
+    link: "/blog/greens-fruits-and-toxic-foods.html",
     image:"/blog/images/safevstoxicfoods.jpg"
   },
   {
