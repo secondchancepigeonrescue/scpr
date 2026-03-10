@@ -9,7 +9,7 @@ const posts = [
   },
   {
     title: "Are Pigeons Right For You?",
-    date: "UNFINISHED",
+    date: "March 9, 2026",
     tags: ["getting started"],
     excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
     link: "/blog/are-pigeons-right-for-you.html",
