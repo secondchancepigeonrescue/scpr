@@ -1,7 +1,7 @@
 const posts = [
   {
     title: "I Found A Pigeon",
-    date: "UNFINISHED",
+    date: "March 11, 2026",
     tags: ["rescue"],
     excerpt: "If you've found a pigeon you believe is in danger, sick, or hurt, you've already taken the first step: noticing a pigeon in need. We discuss how to catch, restrain, and house a sick or injured pigeon before transport to a rescuer.",
     link: "/blog/i-found-an-injured-pigeon.html",
