@@ -2,7 +2,7 @@ const posts = [
   {
     title: "SCPR's Guide to Pigeon Care",
     date: "March 9, 2026",
-    tags: ["getting started", "nutrition", "housing"],
+    tags: ["PINNED", "getting started", "nutrition", "housing"],
     excerpt: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more.",
     link: "/blog/scprs-guide-to-pigeon-care.html",
     image: "/blog/images/pigeoncareguide.jpg"
@@ -10,7 +10,7 @@ const posts = [
   {
     title: "Are Pigeons Right For You?",
     date: "March 9, 2026",
-    tags: ["getting started"],
+    tags: ["PINNED", "getting started"],
     excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
     link: "/blog/are-pigeons-right-for-you.html",
     image:"/blog/images/arepigeonsrightforyou.jpg"
