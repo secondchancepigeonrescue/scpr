@@ -658,6 +658,7 @@ p, li {
   flex-wrap: wrap;
   margin: 20px 0;
   justify-content: center;
+  max-width: 1000px;
 }
 
 .article-image {
@@ -667,7 +668,6 @@ p, li {
 .article-image img {
   width: 100%;
   border-radius: 6px;
-  display: block;
 }
 
 .article-image figcaption {
