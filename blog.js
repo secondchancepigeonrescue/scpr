@@ -16,6 +16,14 @@ const posts = [
     image:"/blog/images/arepigeonsrightforyou.jpg"
   },
   {
+    title: "Household Hazards To Pigeons",
+    date: "March 12, 2026",
+    tags: ["getting started", "health"],
+    excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
+    link: "/blog/household-hazards-to-pigeons.html",
+    image:"/blog/images/hazards.jpg"
+  },
+  {
     title: "I Found A Pigeon",
     date: "March 11, 2026",
     tags: ["rescue"],
@@ -30,14 +38,6 @@ const posts = [
     excerpt: "Greens and vegetables can be great enrichment items! However, some foods are toxic. It's important to understand what these are to avoid allowing your pigeon to ingest them.",
     link: "/blog/greens-fruits-and-toxic-foods.html",
     image:"/blog/images/safevstoxicfoods.jpg"
-  },
-    {
-    title: "Household Hazards To Pigeons",
-    date: "March 12, 2026",
-    tags: ["getting started", "health"],
-    excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
-    link: "/blog/household-hazards-to-pigeons.html",
-    image:"/blog/images/hazards.jpg"
   }
 ];
 
