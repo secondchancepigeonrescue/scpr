@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foster | Second Chance Pigeon Rescue</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- ========== HEADER ============ -->
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="brand">
+      <img src="scprlogo.png" alt="Second Chance Pigeon Rescue Logo" class="logo">
+
+      <div class="brand-text">
+        <h1 class="site-title">SECOND CHANCE</h1>
+        <span class="sub-title">PIGEON RESCUE</span>
+      </div>
+    </div>
+
+    <nav>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="selected">ABOUT</a>
+    <a href="adopt.html">ADOPT</a>
+    <a href="foster.html">FOSTER</a>
+    <a href="birds.html">BIRDS</a>
+    <a href="apply.html">APPLY</a>
+    <a href="blogs.html">BLOG</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</nav>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function() {
+    toggle.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+});
+</script>
+
+  </div>
+</header>
+
+    <div id="banner"></div>
+
+<section class="page-hero" style="background-image: url('fosterpic.jpeg');">
+    <div class="hero-overlay">
+        <h1>FOSTER</h1>
+    </div>
+</section>
+
+    <!-- ========= MAIN CONTENT ======== -->
+
+    <section class="section">
+    <div class="container simple-page">
+
+        <div class="simple-text">
+            <p class="tagline">
+                temporary home with lifelong impact
+            </p>
+
+            <p>
+                <b>We do not currently offer fostering.</b>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+    <!-- ========= FOOTER ======= -->
+
+    <div id="footer"></div>
+<script src="../footer.js"></script>
+<script src="/banner.js"></script>
+
+</body>
+</html>
