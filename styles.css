@@ -74,14 +74,14 @@ p, li {
 ========================= */
 
 .site-banner{
-  width:100%;
-  background:#ff0d31;
+  width: calc(100% - 60px);
+  background:#ff0026;
   color:#000000;
   text-align:center;
-  padding:10px;
+  font-size: 15px;
+  padding: 30px;
   font-weight:bold;
   border-bottom:2px solid #c7a6ab;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .site-header {
@@ -110,6 +110,7 @@ p, li {
 
 .brand-text {
     line-height: 1.1;
+    margin-right: 50px;
 }
 
 .site-title {
@@ -175,7 +176,6 @@ p, li {
     background: none;
 }
 
-/* underline hover effect */
 .nav-links a::after {
     content: "";
     position: absolute;
@@ -307,7 +307,7 @@ p, li {
 .circle-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;     /* makes image crop properly */
+    object-fit: cover;
 }
 
 /* =========================
@@ -346,9 +346,8 @@ p, li {
 /* =========================
    FOOTER
 ========================= */
-
 .site-footer {
-    background-color: #5a2d33;   /* your burgundy */
+    background-color: #5a2d33;
     color: #ffffff;
     padding: 60px 40px 30px 40px;
     margin-top: 80px;
@@ -604,7 +603,6 @@ p, li {
 /* =========================
    ARTICLES
 ========================= */
-
 .content-container {
   max-width: 1000px;
   margin: 30px auto;
@@ -688,16 +686,14 @@ p, li {
 .blog-img-right {
   float: right;
   width: 250px;
-  margin: 0 0 15px 20px; /* space between image and text */
+  margin: 0 0 15px 20px;
   border-radius: 10px;
 }
-
 
 
 /* =========================
    CITATIONS
 ========================= */
-
 .citation-section {
   max-width: 1000px;
   margin: 60px auto;
@@ -736,55 +732,6 @@ p, li {
   margin-right: auto;
   padding: 0 20px;
 }
-
-
-
-/* =========================
-   PIGEON QUIZ
-========================= */
-
-.quiz{
-max-width:700px;
-margin:40px auto;
-text-align:center;
-}
-
-.quiz-question{
-font-size:20px;
-margin-bottom:20px;
-}
-
-.quiz-answers{
-display:flex;
-flex-direction:column;
-gap:12px;
-}
-
-.quiz-answer{
-padding:12px;
-border:none;
-background:#6e8a6f;
-color:white;
-cursor:pointer;
-}
-
-.quiz-answer:hover{
-background:#4e6b4e;
-}
-
-.quiz-progress{
-margin-top:20px;
-font-size:14px;
-}
-
-.quiz-result{
-text-align:center;
-max-width:600px;
-margin:40px auto;
-}
-
-
-
 
 
 
@@ -829,15 +776,14 @@ margin:40px auto;
 
 @media (max-width: 768px) {
 
-    /* =========================
-       HEADER MOBILE
-    ========================= */
+/* =========================
+    HEADER MOBILE
+========================= */
 
     .site-header {
         padding: 25px 15px;
     }
 
-    /* Stack logo, name, hamburger */
     .header-inner {
         flex-direction: column;
         align-items: center;
@@ -873,7 +819,6 @@ margin:40px auto;
         align-items: center;
     }
 
-    /* Show hamburger under logo */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -889,8 +834,6 @@ margin:40px auto;
         transition: all 0.3s ease;
     }
 
-    /* Dropdown menu */
-    /* Dropdown menu */
 .nav-links {
     position: absolute;
     top: 100%;
@@ -902,7 +845,7 @@ margin:40px auto;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 0;              /* IMPORTANT: remove padding when closed */
+    padding: 0;
 
     max-height: 0;
     overflow: hidden;
@@ -913,51 +856,42 @@ margin:40px auto;
 
 /* When open */
 .nav-links.active {
-    padding: 20px 0;         /* padding only when open */
+    padding: 20px 0;
     max-height: 600px;
 }
-
-    .nav-links a {
-        padding: 10px 0;
-    }
+.nav-links a {
+    padding: 10px 0;
+}
 
     /* =========================
        PAGE LAYOUT MOBILE
     ========================= */
-
     .home-layout {
         flex-direction: column;
         gap: 30px;
         text-align: center;
     }
-
     .container {
         width: 92%;
     }
-
     .home-text h2 {
         font-size: 32px;
     }
-
     .section {
         padding: 30px 0;
     }
-
     .button-row {
         flex-direction: column;
         align-items: center;
     }
-
     .button {
         width: 80%;
         text-align: center;
     }
-
     .home-image img {
         width: 100%;
         height: auto;
     }
-
     .blog-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -971,11 +905,9 @@ margin:40px auto;
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
 }
-
 .menu-toggle.active span:nth-child(2) {
     opacity: 0;
 }
-
 .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
 }
