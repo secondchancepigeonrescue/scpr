@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="apply.html">APPLY</a>
             <a href="blogs.html">BLOG</a>
             <a href="contact.html">CONTACT</a>
+            <a href="discord.html>DISCORD</a>
           </div>
         </nav>
 
