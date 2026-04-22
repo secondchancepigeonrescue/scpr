@@ -42,6 +42,10 @@ a {
     color: inherit;
 }
 
+label a {
+    color: #b87c8b;
+}
+
 .selected {
     color: #cfcfcf;
 }
@@ -311,6 +315,25 @@ p, li {
 }
 
 /* =========================
+   FIXED CIRCLE PHOTO
+========================= */
+
+.adoption {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.adoption img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================
    BUTTON
 ========================= */
 
@@ -459,7 +482,6 @@ p, li {
 
 .contact-form {
     margin-top: 40px;
-    
 }
 
 .form-group {
