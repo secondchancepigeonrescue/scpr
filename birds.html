@@ -18,40 +18,59 @@
 
 
     <section class="page-hero" style="background-image: url('aboutpic.jpeg');">
-    <div class="hero-overlay">
-        <h1>AVAILABLE BIRDS</h1>
-    </div>
+        <div class="hero-overlay">
+            <h1>AVAILABLE BIRDS</h1>
+        </div>
     </section>
 
-            <section class="section alt-section">
-    <div class="container home-layout reverse">
 
-        <div class="home-image">
-            <div class="circle-photo">
-                <img src="scprlogo.png" alt="Rescue pigeon">
+
+    <!-- NONE AVAILABLE -->
+
+<!--
+
+    <section class="section alt-section">
+        <div class="container home-layout reverse">
+
+            <div class="home-image">
+                <div class="circle-photo">
+                    <img src="scprlogo.png" alt="Rescue pigeon">
+                </div>
             </div>
-        </div>
 
-        <div class="home-text">
+            <div class="home-text">
             
-            <p>
+                <p>
                 We do not currently have any birds available for adoption! Please email us to inquire about
                   soon-to-be-available birds, or check back later!
-            </p>
+                </p>
+            </div>
+
         </div>
+    </section>
+    
+    -->
 
-    </div>
+
+
+
+<!-- ADOPTABLE -->
+
+<section class="section">
+    <div id="birds-root"></div>
 </section>
-
-
 
 
     <!-- ========= FOOTER ======= -->
 
-    <div id="footer"></div>
+<div id="footer"></div>
 <script src="../footer.js"></script>
 
-</footer>
+<!-- REACT -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel" src="birds.js"></script>
 <script src="/banner.js"></script>
 
 </body>
