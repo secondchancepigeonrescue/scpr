@@ -4,7 +4,7 @@ const birds = [
     age: "Age Unknown",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
-    image: "/birds/images/brute.png",
+    image: "/birds/images/brutepic.png",
     link: "/birds/brute.html",
     status: "AVAILABLE"
   }
