@@ -20,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
 
           <div class="nav-links" id="nav-links">
-            <a href="index.html">HOME</a>
-            <a href="about.html">ABOUT</a>
-            <a href="adopt.html">ADOPT</a>
-            <a href="foster.html">FOSTER</a>
-            <a href="birds.html">BIRDS</a>
-            <a href="apply.html">APPLY</a>
-            <a href="blogs.html">BLOG</a>
-            <a href="contact.html">CONTACT</a>
+            <a href="/index.html">HOME</a>
+            <a href="/about.html">ABOUT</a>
+            <a href="/adopt.html">ADOPT</a>
+            <a href="/foster.html">FOSTER</a>
+            <a href="/birds.html">BIRDS</a>
+            <a href="/apply.html">APPLY</a>
+            <a href="/blogs.html">BLOG</a>
+            <a href="/contact.html">CONTACT</a>
           </div>
         </nav>
 
@@ -38,18 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
 
-// Mobile menu toggle
+  // Mobile menu toggle
   toggle.addEventListener("click", function () {
     toggle.classList.toggle("active");
     nav.classList.toggle("active");
   });
 
-// Active page
+  // Active page
   const links = document.querySelectorAll("#nav-links a");
   const currentPage = window.location.pathname.split("/").pop();
 
   links.forEach(link => {
-    const linkPage = link.getAttribute("href");
+    const linkPage = link.getAttribute("href").split("/").pop();
 
     if (
       linkPage === currentPage ||
