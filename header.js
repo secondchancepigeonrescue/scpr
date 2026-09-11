@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="header-inner">
 
         <div class="brand">
-          <img src="sitepics/scprlogo.png" alt="Second Chance Pigeon Rescue Logo" class="logo">
+          <img src="/sitepics/scprlogo.png" alt="Second Chance Pigeon Rescue Logo" class="logo">
 
           <div class="brand-text">
             <h1 class="site-title">SECOND CHANCE</h1>

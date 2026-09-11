@@ -4,7 +4,7 @@ document.getElementById("footer").innerHTML = `
     <div class="footer-container">
 
         <div class="footer-brand">
-            <img src="sitepics/scprlogo.png" alt="SCPR Logo">
+            <img src="/sitepics/scprlogo.png" alt="SCPR Logo">
             <p class="tagline">
                 A second chance for birds left behind.
             </p>

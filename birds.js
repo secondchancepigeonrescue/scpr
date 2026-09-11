@@ -6,7 +6,7 @@ const birds = [
     tags: ["Male", "Not DNA Confirmed", "Single"],
     image: "/birds/images/brutepic.png",
     link: "/birds/brute.html",
-    status: "AVAILABLE"
+    status: "PENDING ADOPTION"
   }
 ];
 
