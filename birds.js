@@ -7,6 +7,15 @@ const birds = [
     image: "/birds/images/brutepic.png",
     link: "/birds/brute.html",
     status: "PENDING ADOPTION"
+  },
+  {
+    name: "Brute",
+    age: "Age Unknown",
+    sex: "Male",
+    tags: ["Male", "Not DNA Confirmed", "Single"],
+    image: "/birds/images/ranchpic.png",
+    link: "/birds/ranch.html",
+    status: "AVAILABLE"
   }
 ];
 
