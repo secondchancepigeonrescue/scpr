@@ -52,7 +52,8 @@ label a {
 }
 
 .section {
-    padding: 20px 0;
+    padding: 40px 0;
+    padding-bottom: 0px;
     max-width: 1500px;
     margin: 0 auto;
 }
@@ -290,7 +291,7 @@ p, li {
 
 .alt-section {
     background-color: #ffffff;
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 .reverse {
