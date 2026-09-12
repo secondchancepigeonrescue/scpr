@@ -31,7 +31,7 @@ document.getElementById("footer").innerHTML = `
     </div>
 
     <div class="footer-bottom">
-        © 2026 Second Chance Pigeon Rescue. All rights reserved.
+        © 2026. All rights reserved.
     </div>
 
 </footer>
