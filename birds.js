@@ -10,7 +10,7 @@ const birds = [
   },
   {
     name: "Ranch",
-    age: "Age Unknown",
+    age: "1 month old",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
     image: "/birds/images/ranchpic.png",
@@ -22,10 +22,9 @@ const birds = [
 function BirdList() {
   return (
     <div className="blog-grid">
-
       {birds.map((bird) => (
         <a href={bird.link} key={bird.name} className="blog-card">
-
+          
           <div className="bird-image">
             <img src={bird.image} alt={bird.name} />
           </div>
