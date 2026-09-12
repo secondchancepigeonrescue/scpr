@@ -9,7 +9,7 @@ const birds = [
     status: "PENDING ADOPTION"
   },
   {
-    name: "Brute",
+    name: "Ranch",
     age: "Age Unknown",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
