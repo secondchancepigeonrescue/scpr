@@ -4,10 +4,14 @@
 
 body {
     margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     background-color: #ffffff;
     color: #3a2a2c;
-    
+}
+
+span {
+  display: block;
+  line-height: 1.1;
 }
 
 .image {
@@ -72,7 +76,11 @@ label a {
 }
 
 p, li {
-    line-height: 1.6;
+    line-height: 1.4;
+}
+
+p {
+  margin: -10px;
 }
 
 /* =========================

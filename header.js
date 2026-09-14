@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/foster.html">FOSTER</a>
             <a href="/birds.html">BIRDS</a>
             <a href="/apply.html">APPLY</a>
+            <a href="/FAQ.html">FAQ</a>
             <a href="/blogs.html">BLOG</a>
             <a href="/contact.html">CONTACT</a>
           </div>
