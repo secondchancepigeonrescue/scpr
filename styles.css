@@ -9,11 +9,6 @@ body {
     color: #3a2a2c;
 }
 
-span {
-  display: block;
-  line-height: 1.1;
-}
-
 .image {
     max-height: 600px;
     height: auto !important;
@@ -76,11 +71,7 @@ label a {
 }
 
 p, li {
-    line-height: 1.4;
-}
-
-p {
-  margin: -10px;
+    line-height: 1.6;
 }
 
 /* =========================
