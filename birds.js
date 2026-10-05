@@ -4,7 +4,7 @@ const birds = [
     age: "Age Unknown",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
-    image: "birds/images/brutepic.png",
+    image: "birds/images/brutepic.jpg",
     link: "birds/brute.html",
     status: "PENDING ADOPTION"
   },
@@ -13,7 +13,7 @@ const birds = [
     age: "2 months old",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
-    image: "birds/images/ranchpic.png",
+    image: "birds/images/ranchpic.jpg",
     link: "birds/ranch.html",
     status: "AVAILABLE"
   }

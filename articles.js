@@ -158,7 +158,18 @@ function renderPosts() {
   shown.forEach(post => articleList.appendChild(articleRow(post)));
 
   if (shown.length === 0) {
-    articleList.appendChild(el("p", "article-empty", "No articles found."));
+    const inCategory = posts.filter(post => currentFilter === "all" || post.tags.includes(currentFilter));
+
+    if (inCategory.length === 0) {
+      // Nothing has been written for this category yet
+      const empty = el("div", "article-empty");
+      empty.appendChild(el("h3", null, "No articles yet!"));
+      empty.appendChild(el("p", null, "Check back later to see if we're updated."));
+      articleList.appendChild(empty);
+    } else {
+      // The category has articles, but the search didn't match any
+      articleList.appendChild(el("p", "article-empty", "No articles found."));
+    }
   }
 
   filterBar.querySelectorAll("button").forEach(button => {

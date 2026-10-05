@@ -21,6 +21,7 @@ document.getElementById("footer").innerHTML = `
             <a href="${SITE}foster.html">Foster</a>
             <a href="${SITE}birds.html">Available Birds</a>
             <a href="${SITE}apply.html">Apply</a>
+            <a href="https://cash.app/$secondchancepigeons" target="_blank" rel="noopener">Donate</a>
         </div>
 
         <div class="footer-column">
