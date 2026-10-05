@@ -25,13 +25,14 @@ document.getElementById("footer").innerHTML = `
         <div class="footer-column">
             <h4>Contact Us</h4>
             <a href="/contact.html">Contact</a>
-            <p>secondchancepigeonrescue@gmail.com</p>
+            <a href="mailto:secondchancepigeonrescue@gmail.com">secondchancepigeonrescue@gmail.com</a>
+            <a href="https://www.facebook.com/profile.php?id=61586187903594" target="_blank">Facebook</a>
         </div>
 
     </div>
 
     <div class="footer-bottom">
-        © 2026. All rights reserved.
+        © 2026 Second Chance Pigeon Rescue. All rights reserved.
     </div>
 
 </footer>

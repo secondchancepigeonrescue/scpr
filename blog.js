@@ -16,7 +16,7 @@ const posts = [
     image:"/blog/images/arepigeonsrightforyou.jpg"
   },
   {
-    title: "I Found A Pigeon",
+    title: "I Found An Injured Pigeon",
     date: "March 11, 2026",
     tags: ["rescue"],
     excerpt: "If you've found a pigeon you believe is in danger, sick, or hurt, you've already taken the first step: noticing a pigeon in need. We discuss how to catch, restrain, and house a sick or injured pigeon before transport to a rescuer.",
@@ -27,7 +27,7 @@ const posts = [
     title: "Greens, Fruits, & Toxic Foods",
     date: "March 10, 2026",
     tags: ["nutrition", "health"],
-    excerpt: "Greens and vegetables can be great enrichment items! However, some foods are toxic. It's important to understand what these are to avoid allowing your pigeon to ingest them.",
+    excerpt: "Greens and vegetables can be great enrichment items! However, some foods are toxic. It's important to know what these are so your pigeon doesn't eat them.",
     link: "/blog/greens-fruits-and-toxic-foods.html",
     image:"/blog/images/safevstoxicfoods.jpg"
   },
@@ -35,60 +35,66 @@ const posts = [
     title: "Household Hazards To Pigeons",
     date: "March 12, 2026",
     tags: ["getting started", "health"],
-    excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
+    excerpt: "Many everyday household items, from nonstick cookware to houseplants, can be dangerous to pigeons. Here, we cover hazards in the air, toxic plants, physical dangers, and items that are easily swallowed.",
     link: "/blog/household-hazards-to-pigeons.html",
     image:"/blog/images/hazards.jpg"
   }
 ];
 
-function BlogList() {
+const filters = [
+  { label: "All", value: "all" },
+  { label: "Getting Started", value: "getting started" },
+  { label: "Nutrition", value: "nutrition" },
+  { label: "Health", value: "health" },
+  { label: "Rescue", value: "rescue" }
+];
 
-  const [filter, setFilter] = React.useState("all");
-
-  const filteredPosts = posts.filter(post =>
-    filter === "all" || post.tags.includes(filter)
-  );
-
-  return (
-    <div>
-
-      <div className="blog-filters">
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("getting started")}>Getting Started</button>
-        <button onClick={() => setFilter("nutrition")}>Nutrition</button>
-        <button onClick={() => setFilter("health")}>Health</button>
-        <button onClick={() => setFilter("rescue")}>Rescue</button>
-      </div>
-
-      <div className="blog-grid">
-        {filteredPosts.map((post) => (
-          <a href={post.link} key={post.link} className="blog-card">
-
-            <div className="blog-image">
-              <img src={post.image} alt={post.title} />
-            </div>
-
-            <h2>{post.title}</h2>
-
-            <small className="post-date">{post.date}</small>
-
-            <p>{post.excerpt}</p>
-
-            <div className="post-tags">
-              {post.tags.map(tag => (
-                <span key={tag} className="tag">{tag}</span>
-              ))}
-            </div>
-
-            <span className="read-more">Read More →</span>
-
-          </a>
-        ))}
-      </div>
-
-    </div>
-  );
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
 }
 
-const root = ReactDOM.createRoot(document.getElementById("blog-root"));
-root.render(<BlogList />);
+const blogRoot = document.getElementById("blog-root");
+const filterBar = el("div", "blog-filters");
+const blogGrid = el("div", "blog-grid");
+
+function renderPosts(filter) {
+  blogGrid.innerHTML = "";
+
+  posts
+    .filter(post => filter === "all" || post.tags.includes(filter))
+    .forEach(post => {
+      const card = el("a", "blog-card");
+      card.href = post.link;
+
+      const imageWrap = el("div", "blog-image");
+      const img = document.createElement("img");
+      img.src = post.image;
+      img.alt = post.title;
+      imageWrap.appendChild(img);
+      card.appendChild(imageWrap);
+
+      card.appendChild(el("h2", null, post.title));
+      card.appendChild(el("small", "post-date", post.date));
+      card.appendChild(el("p", null, post.excerpt));
+
+      const tags = el("div", "post-tags");
+      post.tags.forEach(tag => tags.appendChild(el("span", "tag", tag)));
+      card.appendChild(tags);
+
+      card.appendChild(el("span", "read-more", "Read More \u2192"));
+      blogGrid.appendChild(card);
+    });
+}
+
+filters.forEach(f => {
+  const button = el("button", null, f.label);
+  button.addEventListener("click", () => renderPosts(f.value));
+  filterBar.appendChild(button);
+});
+
+blogRoot.appendChild(filterBar);
+blogRoot.appendChild(blogGrid);
+renderPosts("all");

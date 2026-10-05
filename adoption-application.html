@@ -5,7 +5,6 @@
     <title>Adoption Application | Second Chance Pigeon Rescue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -15,7 +14,7 @@
 
     <div class="container">
         <div class="adoption">
-            <img src="sitepics/scprlogo.png" alt="Rescue pigeon">
+            <img src="sitepics/scprlogo.png" alt="Second Chance Pigeon Rescue logo">
         </div>
     </div>
             
@@ -32,7 +31,7 @@
                 <br><br>
                 By submitting this application, you certify that all information provided is true and accurate to the best of your knowledge. You understand that this information will be used to evaluate adoption suitability and may be retained as part of Second Chance Pigeon Rescue's adoption records. Providing false or misleading information may result in denial of adoption or removal of placement eligibility. Submitting this application is not confirmation of acceptance.
                 <br><br>
-                Expressing interest in a pigeon does not guarantee you will be matched with that bird. Second Chance Pigeon Rescue matches potential adopters with our available pigeons and do not allow first-come-first-serve.
+                Expressing interest in a pigeon does not guarantee you will be matched with that bird. Second Chance Pigeon Rescue matches potential adopters with our available pigeons and does not operate on a first-come, first-served basis.
             </p>
 
 
@@ -63,13 +62,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="over18">Are you over 18? [Yes/No]</label>
+                        <label for="over18">Are you 18 or older? [Yes/No]</label>
                         <textarea name="over18" id="over18" rows="1" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="dob">Date of Birth</label>
-                        <input type="date" name="dob" id="dob">
+                        <input type="date" name="dob" id="dob" required>
                     </div>
 
 
@@ -82,22 +81,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="landlordperm">If you rent, do you have permission from your landlord to own a pigeon? [Yes/No]</label>
+                        <label for="landlordperm">If you rent, do you have permission from your landlord to own a pigeon? [Yes/No/N/A]</label>
                         <textarea name="landlordperm" id="landlordperm" rows="1" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="landlordinfo">If you rent, enter your landlord's contact information below.</label>
+                        <label for="landlordinfo">If you rent, enter your landlord's contact information below. (Enter N/A if you own.)</label>
                         <textarea name="landlordinfo" id="landlordinfo" rows="1" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="residence">List names and relationships of all residents in your home, including age.</label>
+                        <label for="residence">List the names, ages, and relationships of all residents in your home.</label>
                         <textarea name="residence" id="residence" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="otherpets">Do you have other pets in the home? If so, list names and breed/species.</label>
+                        <label for="otherpets">Do you have other pets in the home? If so, list their names and breeds/species.</label>
                         <textarea name="otherpets" id="otherpets" rows="3" required></textarea>
                     </div>
 
@@ -127,7 +126,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="timeperday">How long will you be able to spend per day with your pigeon? How many days a week can you provide free roam time outside of the cage safely inside of your home, and for how long?</label>
+                        <label for="timeperday">How much time will you be able to spend with your pigeon each day? How many days a week can you provide safe free roam time outside the cage in your home, and for how long?</label>
                         <textarea name="timeperday" id="timeperday" rows="2" required></textarea>
                     </div>
 
@@ -137,7 +136,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="toxicfumes">The following is toxic to birds, including, but not limited to, PTFE/Teflon cookware, aerosol sprays, spray-on deodorant, candles (including those labelled bird-safe), incense, perfumes, body sprays, and plug-in air fresheners.<br><br>Will you be able to accommodate your bird, which may include not using these items in the room or entire home? [Yes/No]</label>
+                        <label for="toxicfumes">The following items are toxic to birds, including but not limited to PTFE/Teflon cookware, aerosol sprays, spray-on deodorant, candles (including those labelled bird-safe), incense, perfumes, body sprays, and plug-in air fresheners.<br><br>Will you be able to accommodate your bird, which may mean not using these items in its room or anywhere in your home? [Yes/No]</label>
                         <textarea name="toxicfumes" id="toxicfumes" rows="1" required></textarea>
                     </div>
 
@@ -152,13 +151,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="xxxxxxxx">SCPR's birds cannot be free flown, raced, or bred. Do you agree to these terms? [Yes/No]</label>
-                        <textarea name="xxxxxxxx" id="xxxxxxxx" rows="1" required></textarea>
+                        <label for="noflyrace">SCPR's birds cannot be free flown, raced, or bred. Do you agree to these terms? [Yes/No]</label>
+                        <textarea name="noflyrace" id="noflyrace" rows="1" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="xxxxxxxx">SCPR requires updates at 1 day, 1 week, and 1 month of ownership, within 24 hours of notification. Do you agree to to update SCPR in accordance to this? [Yes/No]</label>
-                        <textarea name="xxxxxxxx" id="xxxxxxxx" rows="1" required></textarea>
+                        <label for="updates">SCPR requires updates at 1 day, 1 week, and 1 month after adoption, each within 24 hours of our request. Do you agree to update SCPR accordingly? [Yes/No]</label>
+                        <textarea name="updates" id="updates" rows="1" required></textarea>
                     </div>
 
 
@@ -167,12 +166,12 @@
                     <h3>Enclosure</h3>
 
                     <div class="form-group">
-                        <label for="enclosure">Please describe the enclosure for your pigeon and where it's located in the house in detail.</label>
+                        <label for="enclosure">Please describe your pigeon's enclosure in detail, including where it will be located in your home.</label>
                         <textarea name="enclosure" id="enclosure" rows="1" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="enclosurescreen">Upon reviewing your application, SCPR will request multiple photos of your bird's enclosure. Applications are noted as incomplete until these photos are given. Do you agree to this? [Yes/No]</label>
+                        <label for="enclosurescreen">Upon reviewing your application, SCPR will request multiple photos of your bird's enclosure. Applications are considered incomplete until these photos are provided. Do you agree to this? [Yes/No]</label>
                         <textarea name="enclosurescreen" id="enclosurescreen" rows="1" required></textarea>
                     </div>
 
@@ -187,7 +186,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="vetcontact">Please provide the name and phone number of your veterinarian or vet clinic. You can find avian veterinarians near you on <a href="https://www.aav.org/search/" target="_blank" > AAV Find-A-Vet</a>.</label>
+                        <label for="vetcontact">Please provide the name and phone number of your veterinarian or vet clinic. You can find avian veterinarians near you on <a href="https://www.aav.org/search/" target="_blank">AAV Find-A-Vet</a>.</label>
                         <textarea name="vetcontact" id="vetcontact" rows="1" required></textarea>
                     </div>
 

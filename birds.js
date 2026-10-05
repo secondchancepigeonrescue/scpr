@@ -10,7 +10,7 @@ const birds = [
   },
   {
     name: "Ranch",
-    age: "1 month old",
+    age: "2 months old",
     sex: "Male",
     tags: ["Male", "Not DNA Confirmed", "Single"],
     image: "/birds/images/ranchpic.png",
@@ -19,40 +19,35 @@ const birds = [
   }
 ];
 
-function BirdList() {
-  return (
-    <div className="blog-grid">
-      {birds.map((bird) => (
-        <a href={bird.link} key={bird.name} className="blog-card">
-          
-          <div className="bird-image">
-            <img src={bird.image} alt={bird.name} />
-          </div>
-
-          <div className="bird-status">
-            {bird.status}
-          </div>
-
-          <h2>{bird.name}</h2>
-
-          <small className="post-date">
-            {bird.sex} • {bird.age}
-          </small>
-
-          <div className="post-tags">
-            {bird.tags.map(tag => (
-              <span key={tag} className="tag">
-                {tag}
-              </span>
-            ))}
-          </div>
-
-        </a>
-      ))}
-
-    </div>
-  );
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
 }
 
-const root = ReactDOM.createRoot(document.getElementById("birds-root"));
-root.render(<BirdList />);
+const birdGrid = el("div", "blog-grid");
+
+birds.forEach(bird => {
+  const card = el("a", "blog-card");
+  card.href = bird.link;
+
+  const imageWrap = el("div", "bird-image");
+  const img = document.createElement("img");
+  img.src = bird.image;
+  img.alt = bird.name;
+  imageWrap.appendChild(img);
+  card.appendChild(imageWrap);
+
+  card.appendChild(el("div", "bird-status", bird.status));
+  card.appendChild(el("h2", null, bird.name));
+  card.appendChild(el("small", "post-date", bird.sex + " \u2022 " + bird.age));
+
+  const tags = el("div", "post-tags");
+  bird.tags.forEach(tag => tags.appendChild(el("span", "tag", tag)));
+  card.appendChild(tags);
+
+  birdGrid.appendChild(card);
+});
+
+document.getElementById("birds-root").appendChild(birdGrid);
