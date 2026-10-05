@@ -848,6 +848,132 @@ nav {
     padding-top: 40px;
 }
 
+/* List on the left, featured article on the right */
+.articles-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Search box and sort dropdown */
+.article-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.article-search,
+.article-sort {
+    padding: 11px 14px;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] .article-search,
+:root[data-theme="dark"] .article-sort {
+    background-color: var(--surface-soft);
+    color-scheme: dark;
+}
+
+.article-search {
+    flex: 1;
+    min-width: 200px;
+}
+
+.article-sort {
+    cursor: pointer;
+}
+
+.article-search:focus,
+.article-sort:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+    border-color: var(--accent);
+}
+
+.article-date {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.article-empty {
+    padding: 28px 0;
+    color: var(--muted);
+}
+
+/* Featured article */
+.article-featured {
+    position: sticky;
+    top: 110px;
+}
+
+.featured-card {
+    display: block;
+    color: inherit;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--surface-soft);
+    transition: border-color 0.2s ease;
+}
+
+.featured-card:hover {
+    border-color: var(--accent);
+}
+
+.featured-photo {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.featured-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover .featured-photo img {
+    transform: scale(1.04);
+}
+
+.featured-card h3 {
+    font-size: 24px;
+    margin: 18px 20px 8px 20px;
+}
+
+.featured-card p {
+    margin: 0 20px 20px 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* Narrow screens: featured article moves above the list */
+@media (max-width: 900px) {
+
+    .articles-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .article-featured {
+        position: static;
+        order: -1;
+    }
+}
+
 .article-filters {
     display: flex;
     flex-wrap: wrap;
