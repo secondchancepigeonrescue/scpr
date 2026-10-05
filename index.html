@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>Home | Second Chance Pigeon Rescue</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&family=Oswald:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js"></script>
 </head>
 <body>
 
@@ -13,26 +17,29 @@
 <script src="header.js"></script>
 
 <div id="banner"></div>
+
     <!-- ========= MAIN CONTENT ======== -->
 
-<section class="page-hero" style="background-image: url('/sitepics/threebirds.jpg');">
+<section class="page-hero home-hero" style="background-image: url('sitepics/threebirds.jpg'); background-position: center 45%;">
     <div class="hero-overlay">
-        <h1>SECOND CHANCE PIGEON RESCUE</h1>
+        <h1>Second Chance Pigeon Rescue</h1>
+        <p class="tagline">A second chance for birds left behind</p>
+        <div class="button-row">
+            <a href="birds.html" class="button">Available Birds</a>
+            <a href="apply.html" class="button button-outline">Apply</a>
+        </div>
     </div>
 </section>
 
+    <!-- About -->
     <section class="section">
-
         <div class="container home-layout">
             <div class="home-image">
                 <div class="circle-photo">
-                    <img src="/sitepics/twopigeons.png" alt="Two pigeons in enclosure">
+                    <img src="sitepics/twopigeons.png" alt="Two pigeons in enclosure">
                 </div>
             </div>
             <div class="home-text">
-                <p class="tagline">
-                A second chance for birds left behind
-                </p>
                 <p>
                     <b>Second Chance Pigeon Rescue</b> is an independently operated pigeon rescue based in <b>Franklin, Ohio</b>. We are not currently a nonprofit organization, and donations made to SCPR are not tax-deductible, but help us cover the cost of veterinary care, food, housing, supplies, and other necessities involved in caring for rescued pigeons.
                 </p>
@@ -41,48 +48,85 @@
         </div>
     </section>
 
-        <br><br>
-
-<section class="section alt-section">
-    <div class="container home-layout reverse">
-        <div class="home-image">
-            <div class="circle-photo">
-                <img src="sitepics/scprlogo.png" alt="Second Chance Pigeon Rescue logo">
-            </div>
-        </div>
-
-        <div class="home-text">
-            <h2>OUR MISSION</h2>
-            <p>
-                We focus on rehabilitation, veterinary care, adoption, and advocacy for domestic pigeons &lpar;including feral birds&rpar; who are overlooked by traditional rescue systems. Our goal is to provide the second chance these birds need while promoting responsible pigeon ownership and welfare.
-            </p>
-            <a href="adopt.html" class="button">Adopt</a>
-        </div>
-
-    </div>
-</section>
-    
-    <br><br>
-
+    <!-- Three photo links -->
     <section class="section">
-        <div class="container home-layout">
+        <div class="container card-row">
+            <a class="link-card" href="adopt.html">
+                <div class="link-card-photo"><img src="sitepics/adoptbanner.webp" alt=""></div>
+                <div class="link-card-text">
+                    <h3>Adopt</h3>
+                    <p>their second chance starts with you!</p>
+                </div>
+            </a>
+            <a class="link-card" href="foster.html">
+                <div class="link-card-photo"><img src="sitepics/fosterpic.png" alt="" style="object-position: center 20%;"></div>
+                <div class="link-card-text">
+                    <h3>Foster</h3>
+                    <p>temporary home with lifelong impact</p>
+                </div>
+            </a>
+            <a class="link-card" href="contact.html">
+                <div class="link-card-photo"><img src="sitepics/contact.png" alt=""></div>
+                <div class="link-card-text">
+                    <h3>Contact</h3>
+                    <p>have questions or concerns?</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="band mission">
+        <div class="container home-layout reverse">
             <div class="home-image">
                 <div class="circle-photo">
-                    <img src="sitepics/aboutpic.jpeg" alt="MPPS Discord">
+                    <img src="sitepics/scprlogo.png" alt="Second Chance Pigeon Rescue logo">
                 </div>
             </div>
             <div class="home-text">
-                <p class="tagline">
-                join the modern pet pigeon society!
+                <h2>Our Mission</h2>
+                <p>
+                    We focus on rehabilitation, veterinary care, adoption, and advocacy for domestic pigeons &lpar;including feral birds&rpar; who are overlooked by traditional rescue systems. Our goal is to provide the second chance these birds need while promoting responsible pigeon ownership and welfare.
                 </p>
-                <a href="https://discord.gg/m98RF2B4WS" class="button">Join the MPPS Discord</a>
+                <a href="adopt.html" class="button">Adopt</a>
             </div>
         </div>
     </section>
+
+    <!-- Birds -->
+    <section class="section">
+        <div class="container section-head">
+            <h2>Available Birds</h2>
+            <a href="birds.html" class="section-link">View Our Gallery</a>
+        </div>
+        <div id="birds-root"></div>
+    </section>
+
+    <!-- Articles -->
+    <section class="band tinted">
+        <div class="container section-head">
+            <h2>Articles</h2>
+            <a href="articles.html" class="section-link">All Articles</a>
+        </div>
+        <div class="container" id="articles-root" data-limit="3"></div>
+    </section>
+
+    <!-- Discord -->
+    <section class="callout">
+        <div class="container">
+            <p class="tagline">
+                join the pet pigeon society!
+            </p>
+            <a href="https://discord.gg/m98RF2B4WS" class="button">Discord</a>
+        </div>
+    </section>
+
     <!-- ========= FOOTER ======= -->
 
 <div id="footer"></div>
-<script src="../footer.js"></script>
-<script src="/banner.js"></script>
+<script src="footer.js"></script>
+<script src="birds.js"></script>
+<script src="articles.js"></script>
+<script src="banner.js"></script>
 </body>
 </html>
