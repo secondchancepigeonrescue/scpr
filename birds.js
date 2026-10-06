@@ -40,7 +40,8 @@ birds.forEach(bird => {
   card.appendChild(photo);
 
   const info = el("div", "bird-info");
-  info.appendChild(el("div", "bird-status", bird.status));
+  const statusClass = /^adopted/i.test(bird.status) ? " adopted" : /^ready/i.test(bird.status) ? " ready" : "";
+  info.appendChild(el("div", "bird-status" + statusClass, bird.status));
   info.appendChild(el("h2", null, bird.name));
   info.appendChild(el("div", "bird-details", bird.sex + " \u2022 " + bird.age));
 

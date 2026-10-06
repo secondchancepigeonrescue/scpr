@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-marilynn-Downloads-scpr-main/eb3a3d87-5f12-40c2-a40a-99bb5d5dea47/scratchpad/site && exec python3 -m http.server 8123"
+      ],
+      "port": 8123
+    }
+  ]
+}

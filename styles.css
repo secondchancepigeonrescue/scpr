@@ -34,6 +34,8 @@
     --border: #d3cbdd;
     --footer-bg: #46305f;
     --footer-text: #ffffff;
+    --status-ready: #1a7f37;
+    --status-adopted: #c0392b;
 
     --font-heading: "Oswald", "Arial Narrow", sans-serif;
     --font-body: "Mulish", Arial, sans-serif;
@@ -53,6 +55,8 @@
     --border: #3a3147;
     --footer-bg: #100d14;
     --footer-text: #e5e0ec;
+    --status-ready: #78ff8e;
+    --status-adopted: #ff8578;
 }
 
 /* =========================
@@ -628,6 +632,46 @@ nav {
     margin: 0 auto;
 }
 
+/* A tall photo, kept portrait rather than cropped to 4:3 */
+.portrait-photo {
+    aspect-ratio: 3 / 4;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* About page: photo fills one half, heading and text share the other half */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "photo head"
+        "photo body";
+    column-gap: 60px;
+}
+
+.about-layout.photo-right {
+    grid-template-areas:
+        "head photo"
+        "body photo";
+}
+
+.about-head {
+    grid-area: head;
+}
+
+.about-photo {
+    grid-area: photo;
+    align-self: center;
+}
+
+.about-body {
+    grid-area: body;
+}
+
+.about-layout .about-photo .circle-photo {
+    max-width: 520px;
+}
+
 /* A short accent rule above headings in page text */
 .home-text h2::before {
     content: "";
@@ -658,6 +702,24 @@ nav {
         flex-direction: column;
         align-items: stretch;
         gap: 30px;
+    }
+
+    /* On phones: heading, then photo, then text */
+    .about-layout,
+    .about-layout.photo-right {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "head"
+            "photo"
+            "body";
+    }
+
+    .about-photo {
+        margin: 10px 0 30px 0;
+    }
+
+    .about-layout .about-photo .circle-photo:has(img[src*="scprlogo"]) {
+        max-width: 300px;
     }
 
     .section {
@@ -1286,6 +1348,16 @@ nav {
     letter-spacing: 2px;
     color: var(--link);
     margin-bottom: 6px;
+}
+
+.bird-status.ready,
+.tagline.ready {
+    color: var(--status-ready);
+}
+
+.bird-status.adopted,
+.tagline.adopted {
+    color: var(--status-adopted);
 }
 
 .bird-info h2 {
