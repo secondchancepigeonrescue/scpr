@@ -70,7 +70,7 @@ const posts = [
   {
     title: "Finding a Vet for Your Pigeon",
     date: "October 6, 2026",
-    tags: ["other topics"],
+    tags: ["pigeon care", "rescue & health", "other topics"],
     keywords: ["vet", "veterinarian", "avian", "aav", "health", "emergency", "screening", "red flags", "fenbendazole", "panacur", "dewormer", "insurance", "nationwide", "cost"],
     excerpt: "Not every avian vet knows pigeons. Here's how to find one before an emergency, the questions to ask when screening them, the red flags to watch for, and what to know about paying for care.",
     link: "blog/finding-a-vet-for-your-pigeon.html",
