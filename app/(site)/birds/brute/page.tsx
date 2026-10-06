@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import { BirdProfile } from "@/components/Birds";
+import { getBird } from "@/lib/birds";
+
+const bird = getBird("brute");
+
+export const metadata: Metadata = { title: bird.name };
+
+export default function BrutePage() {
+  return (
+    <BirdProfile bird={bird} status="Pending adoption">
+      <p>
+        Are you looking for a feisty pigeon in your life? Maybe one that has the survival story to show off a little, but can still
+        capture your heart (or your hen&apos;s)? Brute could be perfect for you!
+      </p>
+      <p>
+        Brute is one of those classic blue bar pigeons you&apos;d see on the street. He lived his whole life as a feral bird until
+        January 2026. A concerned citizen saw him struggling to fly and took him home. Brute came in with a broken wing but was
+        otherwise okay. Initially, we believed Brute couldn&apos;t fly, but he quickly proved us wrong when he shot out of his carrier
+        at the vet.
+      </p>
+      <p>
+        Brute is a very feisty bird. He wing slaps anyone who gets close to him... or his cage. He&apos;ll stand his ground for some
+        time before he makes a grand escape, which usually means flying well out of reach and taunting you with a side-eye. But around
+        hens? This little dude is ALL the drama. Dancing. Cooing. Fanning his tail. Ready for some loving attention from a hen who wants
+        all of his sass.
+      </p>
+      <ul>
+        <li>Assumed male; not DNA sexed!</li>
+        <li>Brute would likely do well paired with a hen! He may come around to someone willing to be patient with him.</li>
+        <li>Brute needs an indoor-only home with accommodations for his difficulty flying.</li>
+        <li>
+          Brute has pain in his right wing. He may need pain medication, especially as he ages. He&apos;s likely to develop arthritis
+          earlier than some birds and may require ongoing treatment as it develops.
+        </li>
+      </ul>
+    </BirdProfile>
+  );
+}

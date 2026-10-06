@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* dark: utilities follow the light/dark button (data-theme on <html>),
+   which itself defaults to the visitor's device setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* =========================
+   COLORS AND FONTS
+   Used as bg-page, text-heading, border-line, etc.
+========================= */
+
+@theme {
+  --color-page: #ffffff;
+  --color-surface: #e3deea;
+  --color-surface-soft: #f3f0f7;
+  --color-ink: #2f2a38;
+  --color-muted: #625a70;
+  --color-heading: #46305f;
+  --color-accent: #8f76b0;
+  --color-link: #7a5fa0;
+  --color-on-accent: #ffffff;
+  --color-line: #d3cbdd;
+  --color-footer: #46305f;
+  --color-footer-ink: #ffffff;
+  --color-band: #46305f;
+  --color-band-ink: #ffffff;
+  --color-plum: #2b1d3d;
+
+  --font-heading: var(--font-oswald), "Arial Narrow", sans-serif;
+  --font-body: var(--font-mulish), Arial, sans-serif;
+
+  /* Header switches from the hamburger to the full menu here */
+  --breakpoint-nav: 1101px;
+
+  --animate-fade-up: fade-up 0.6s ease both;
+  --animate-fade-in: fade-in 0.3s ease;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  --color-page: #17141c;
+  --color-surface: #241e2d;
+  --color-surface-soft: #1d1924;
+  --color-ink: #e5e0ec;
+  --color-muted: #aaa1b8;
+  --color-heading: #dfd0f2;
+  --color-accent: #ae96d0;
+  --color-link: #bfaadc;
+  --color-on-accent: #1c1526;
+  --color-line: #3a3147;
+  --color-footer: #100d14;
+  --color-footer-ink: #e5e0ec;
+  --color-band: #241e2d;
+  --color-band-ink: #e5e0ec;
+}
+
+/* Page-width container */
+@utility wrap {
+  width: 88%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* =========================
+   BASE STYLES
+========================= */
+
+@layer base {
+  /* Keep the browser's normal line height (Tailwind sets 1.5) */
+  html {
+    line-height: normal;
+  }
+
+  body {
+    @apply bg-page font-body text-[17px] text-ink;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading leading-[1.15] font-medium tracking-[1px] text-heading uppercase;
+  }
+
+  h2 {
+    @apply mb-[18px] text-[clamp(28px,4vw,40px)];
+  }
+
+  h3 {
+    @apply mb-3.5 text-[24px];
+  }
+
+  p,
+  li {
+    @apply leading-[1.7];
+  }
+
+  a {
+    @apply text-link;
+  }
+
+  /* Links inside running text are underlined */
+  p a,
+  li a {
+    @apply underline underline-offset-3 hover:text-heading;
+  }
+}
+
+/* =========================
+   RICH TEXT
+   Paragraphs and lists inside page text and articles.
+   (Tailwind removes the browser's list bullets and margins.)
+========================= */
+
+@layer components {
+  .rich-text {
+    & p {
+      @apply mb-5;
+    }
+
+    & ul {
+      @apply mb-5 list-disc pl-10;
+    }
+
+    & ol {
+      @apply mb-5 list-decimal pl-10;
+    }
+
+    & ol[type="a"] {
+      @apply list-[lower-alpha];
+    }
+
+    & li > ul,
+    & li > ol {
+      @apply mt-1 mb-0;
+    }
+  }
+}
+
+/* =========================
+   TRANSITIONS
+   All of them switch off for visitors whose device is set to reduce motion.
+========================= */
+
+/* Light / dark: colors fade for a moment after the button is pressed */
+.theme-fade,
+.theme-fade *,
+.theme-fade *::before,
+.theme-fade *::after {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease !important;
+}
+
+/* Scroll reveal (the classes are added by components/ScrollReveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-fade,
+  .theme-fade *,
+  .theme-fade *::before,
+  .theme-fade *::after {
+    transition: none !important;
+  }
+}
