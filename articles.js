@@ -57,6 +57,15 @@ const posts = [
     excerpt: "Many everyday household items, from nonstick cookware to houseplants, can be dangerous to pigeons. Here, we cover hazards in the air, toxic plants, physical dangers, and items that are easily swallowed.",
     link: "blog/household-hazards-to-pigeons.html",
     image:"blog/images/hazards.jpg"
+  },
+  {
+    title: "Seeds & Pellets: An Overview",
+    date: "October 6, 2026",
+    tags: ["pigeon care"],
+    keywords: ["nutrition", "diet", "food", "feed", "seed", "seeds", "grain", "pellet", "pellets", "protein", "fat", "fiber", "macronutrients", "mazuri", "harrison's", "des moines", "versele-laga", "purgrain", "brown's"],
+    excerpt: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be.",
+    link: "blog/seeds-and-pellets-an-overview.html",
+    image: "blog/images/seedsandpellets.jpg"
   }
 ];
 
@@ -68,6 +77,10 @@ const featured = [
   {
     title: "SCPR's Guide to Pigeon Care",
     summary: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more."
+  },
+  {
+    title: "Seeds & Pellets: An Overview",
+    summary: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be."
   }
 ];
 

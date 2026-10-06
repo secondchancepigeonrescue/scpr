@@ -1377,6 +1377,17 @@ nav {
     color: var(--link);
 }
 
+/* "Sources:" line under a paragraph */
+.article-sources {
+    font-size: 15px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.article-sources a {
+    color: var(--link);
+}
+
 .citation-section {
     margin-top: 60px;
     padding-top: 30px;
