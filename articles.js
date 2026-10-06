@@ -66,6 +66,15 @@ const posts = [
     excerpt: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be.",
     link: "blog/seeds-and-pellets-an-overview.html",
     image: "blog/images/seedsandpellets.jpg"
+  },
+  {
+    title: "Finding a Vet for Your Pigeon",
+    date: "October 6, 2026",
+    tags: ["other topics"],
+    keywords: ["vet", "veterinarian", "avian", "aav", "health", "emergency", "screening", "red flags", "fenbendazole", "panacur", "dewormer", "insurance", "nationwide", "cost"],
+    excerpt: "Not every avian vet knows pigeons. Here's how to find one before an emergency, the questions to ask when screening them, the red flags to watch for, and what to know about paying for care.",
+    link: "blog/finding-a-vet-for-your-pigeon.html",
+    image: "blog/images/findingavet.jpg"
   }
 ];
 
