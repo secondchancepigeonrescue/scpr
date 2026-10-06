@@ -7,7 +7,7 @@
 //             "rescue & health", "stories" or "other topics"
 //   keywords  extra words the search box should find; never shown on the page
 //
-// The FEATURED article on the right of the Articles page is set
+// The FEATURED articles on the right of the Articles page are set
 // just below the list.
 // =========================================================
 
@@ -24,7 +24,7 @@ const posts = [
   {
     title: "Are Pigeons Right For You?",
     date: "March 9, 2026",
-    tags: ["pigeon care"],
+    tags: ["other topics"],
     keywords: ["getting started", "pet", "adopt", "adoption", "commitment", "pros", "cons", "beginner"],
     excerpt: "Pigeons make wonderful pets, but only for the right people. Here, we discuss the considerations, including positives and negatives, of owning pet pigeons long term.",
     link: "blog/are-pigeons-right-for-you.html",
@@ -52,7 +52,7 @@ const posts = [
     {
     title: "Household Hazards To Pigeons",
     date: "March 12, 2026",
-    tags: ["pigeon care"],
+    tags: ["other topics"],
     keywords: ["getting started", "health", "safety", "danger", "toxic", "poison", "plants", "nonstick", "teflon", "candles", "fumes"],
     excerpt: "Many everyday household items, from nonstick cookware to houseplants, can be dangerous to pigeons. Here, we cover hazards in the air, toxic plants, physical dangers, and items that are easily swallowed.",
     link: "blog/household-hazards-to-pigeons.html",
@@ -60,12 +60,16 @@ const posts = [
   }
 ];
 
-// Featured article (right side of the Articles page).
+// Featured articles (right side of the Articles page).
 // title must match one of the titles above exactly; summary is yours to write.
-const featured = {
-  title: "SCPR's Guide to Pigeon Care",
-  summary: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more."
-};
+// To feature more than one, copy a { ... } block and separate them with commas.
+// With two or more, they turn into a gallery with arrows automatically.
+const featured = [
+  {
+    title: "SCPR's Guide to Pigeon Care",
+    summary: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more."
+  }
+];
 
 const filters = [
   { label: "All", value: "all" },
@@ -95,13 +99,18 @@ const articlesRoot = document.getElementById("articles-root");
 const isShortList = Boolean(articlesRoot.dataset.limit);
 const limit = Number(articlesRoot.dataset.limit) || posts.length;
 
+// How many articles show at once on the Articles page before the arrows appear
+const PAGE_SIZE = 5;
+
 const filterBar = el("div", "article-filters");
 const articleList = el("div", "article-list");
+const pager = el("div", "article-pager");
 
 // What the visitor has currently chosen
 let currentFilter = "all";
 let currentSort = "newest";
 let currentSearch = "";
+let currentPage = 0;
 
 function sortPosts(list) {
   const sorted = list.slice();
@@ -150,12 +159,20 @@ function articleRow(post) {
 function renderPosts() {
   articleList.innerHTML = "";
 
-  const shown = sortPosts(posts)
+  const matching = sortPosts(posts)
     .filter(post => currentFilter === "all" || post.tags.includes(currentFilter))
-    .filter(matchesSearch)
-    .slice(0, limit);
+    .filter(matchesSearch);
+
+  // Home page: just the first few. Articles page: one page of PAGE_SIZE at a time.
+  const pageCount = isShortList ? 1 : Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
+  currentPage = Math.min(currentPage, pageCount - 1);
+
+  const shown = isShortList
+    ? matching.slice(0, limit)
+    : matching.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
 
   shown.forEach(post => articleList.appendChild(articleRow(post)));
+  renderPager(pageCount);
 
   if (shown.length === 0) {
     const inCategory = posts.filter(post => currentFilter === "all" || post.tags.includes(currentFilter));
@@ -177,6 +194,34 @@ function renderPosts() {
   });
 }
 
+// Arrows under the list, shown only when there is more than one page
+function renderPager(pageCount) {
+  pager.innerHTML = "";
+  pager.hidden = pageCount < 2;
+  if (pageCount < 2) return;
+
+  function arrow(symbol, label, page) {
+    const button = el("button", "featured-arrow", symbol);
+    button.type = "button";
+    button.setAttribute("aria-label", label);
+    button.disabled = page < 0 || page >= pageCount;
+    button.addEventListener("click", () => {
+      currentPage = page;
+      renderPosts();
+      fadeList();
+      // Jump back up if the top of the list has scrolled out of view (110 clears the header)
+      if (articleList.getBoundingClientRect().top < 110) {
+        window.scrollBy(0, filterBar.getBoundingClientRect().top - 110);
+      }
+    });
+    return button;
+  }
+
+  pager.appendChild(arrow("\u2190", "Previous articles", currentPage - 1));
+  pager.appendChild(el("span", null, "Page " + (currentPage + 1) + " of " + pageCount));
+  pager.appendChild(arrow("\u2192", "Next articles", currentPage + 1));
+}
+
 // Restart the short fade when the list changes
 function fadeList() {
   articleList.classList.remove("list-fade");
@@ -190,6 +235,7 @@ filters.forEach(f => {
   button.dataset.filter = f.value;
   button.addEventListener("click", () => {
     currentFilter = f.value;
+    currentPage = 0;
     renderPosts();
     fadeList();
   });
@@ -209,6 +255,7 @@ if (isShortList) {
   search.setAttribute("aria-label", "Search articles");
   search.addEventListener("input", () => {
     currentSearch = search.value;
+    currentPage = 0;
     renderPosts();
   });
   tools.appendChild(search);
@@ -223,6 +270,7 @@ if (isShortList) {
   });
   sortSelect.addEventListener("change", () => {
     currentSort = sortSelect.value;
+    currentPage = 0;
     renderPosts();
     fadeList();
   });
@@ -233,31 +281,82 @@ if (isShortList) {
   main.appendChild(tools);
   main.appendChild(filterBar);
   main.appendChild(articleList);
+  main.appendChild(pager);
 
   const layout = el("div", "articles-layout");
   layout.appendChild(main);
 
-  // Right: featured article
-  const featuredPost = posts.find(post => post.title === featured.title);
+  // Right: featured articles
+  const featuredCards = featured
+    .map(item => ({ post: posts.find(post => post.title === item.title), summary: item.summary }))
+    .filter(item => item.post)
+    .map(item => {
+      const card = el("a", "featured-card");
+      card.href = item.post.link;
 
-  if (featuredPost) {
+      const photo = el("div", "featured-photo");
+      const img = document.createElement("img");
+      img.src = item.post.image;
+      img.alt = "";
+      if (item.post.imagePosition) img.style.objectPosition = item.post.imagePosition;
+      photo.appendChild(img);
+      card.appendChild(photo);
+
+      card.appendChild(el("h3", null, item.post.title));
+      card.appendChild(el("p", null, item.summary));
+      return card;
+    });
+
+  if (featuredCards.length > 0) {
     const side = el("aside", "article-featured");
     side.appendChild(el("p", "tagline", "Featured"));
 
-    const card = el("a", "featured-card");
-    card.href = featuredPost.link;
+    if (featuredCards.length === 1) {
+      side.appendChild(featuredCards[0]);
+    } else {
+      // Gallery: one card showing at a time, with arrows and dots underneath
+      const gallery = el("div", "featured-gallery");
+      featuredCards.forEach(card => gallery.appendChild(card));
+      side.appendChild(gallery);
 
-    const photo = el("div", "featured-photo");
-    const img = document.createElement("img");
-    img.src = featuredPost.image;
-    img.alt = "";
-    if (featuredPost.imagePosition) img.style.objectPosition = featuredPost.imagePosition;
-    photo.appendChild(img);
-    card.appendChild(photo);
+      const nav = el("div", "featured-nav");
+      const dots = el("div", "featured-dots");
+      let current = 0;
 
-    card.appendChild(el("h3", null, featuredPost.title));
-    card.appendChild(el("p", null, featured.summary));
-    side.appendChild(card);
+      function show(index) {
+        current = (index + featuredCards.length) % featuredCards.length;
+        featuredCards.forEach((card, i) => card.classList.toggle("off", i !== current));
+        dots.querySelectorAll("button").forEach((dot, i) => {
+          dot.classList.toggle("on", i === current);
+          dot.setAttribute("aria-current", i === current ? "true" : "false");
+        });
+      }
+
+      const prev = el("button", "featured-arrow", "\u2190");
+      prev.type = "button";
+      prev.setAttribute("aria-label", "Previous featured article");
+      prev.addEventListener("click", () => show(current - 1));
+
+      const next = el("button", "featured-arrow", "\u2192");
+      next.type = "button";
+      next.setAttribute("aria-label", "Next featured article");
+      next.addEventListener("click", () => show(current + 1));
+
+      featuredCards.forEach((card, i) => {
+        const dot = el("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Featured article " + (i + 1) + " of " + featuredCards.length);
+        dot.addEventListener("click", () => show(i));
+        dots.appendChild(dot);
+      });
+
+      nav.appendChild(prev);
+      nav.appendChild(dots);
+      nav.appendChild(next);
+      side.appendChild(nav);
+
+      show(0);
+    }
 
     layout.appendChild(side);
   }

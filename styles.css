@@ -759,6 +759,13 @@ nav {
     margin-top: 24px;
 }
 
+/* Buttons centered with extra room above and below */
+.button-row-center {
+    justify-content: center;
+    gap: 16px 24px;
+    margin: 36px 0 44px 0;
+}
+
 /* Ways to reach us, listed above the contact form */
 .contact-list {
     list-style: none;
@@ -1031,6 +1038,100 @@ nav {
     color: var(--muted);
 }
 
+/* Featured gallery: cards share one spot, only the current one shows */
+.featured-gallery {
+    display: grid;
+}
+
+.featured-gallery .featured-card {
+    grid-area: 1 / 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease, border-color 0.2s ease;
+}
+
+.featured-gallery .featured-card.off {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.featured-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.featured-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--link);
+    background-color: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.featured-arrow:hover {
+    border-color: var(--accent);
+    color: var(--heading);
+}
+
+.featured-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    border-color: var(--border);
+    color: var(--link);
+}
+
+/* Arrows under the article list */
+.article-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.article-pager[hidden] {
+    display: none;
+}
+
+.article-pager span {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.featured-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.featured-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--border);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.featured-dots button.on {
+    background-color: var(--accent);
+}
+
+.featured-arrow:focus-visible,
+.featured-dots button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
 /* Narrow screens: featured article moves above the list */
 @media (max-width: 900px) {
 
@@ -1166,6 +1267,19 @@ nav {
     margin-top: 50px;
     padding: 20px 0 0 0;
     border-top: 1px solid var(--border);
+}
+
+/* Back link on the left, a second link on the right */
+.back-link-split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+}
+
+.back-link-split a:last-child {
+    margin-left: auto;
+    text-align: right;
 }
 
 .content-container,
