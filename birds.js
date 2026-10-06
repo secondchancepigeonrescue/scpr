@@ -3,19 +3,19 @@ const birds = [
     name: "Brute",
     age: "Age Unknown",
     sex: "Male",
-    tags: ["Male", "Not DNA Confirmed", "Single"],
+    tags: ["Assumed Male", "Unsexed", "Single"],
     image: "birds/images/brutepic.jpg",
     link: "birds/brute.html",
-    status: "PENDING ADOPTION"
+    status: "Adopted!"
   },
   {
     name: "Ranch",
     age: "2 months old",
     sex: "Male",
-    tags: ["Male", "Not DNA Confirmed", "Single"],
+    tags: ["Unsexed", "Single"],
     image: "birds/images/ranchpic.jpg",
     link: "birds/ranch.html",
-    status: "AVAILABLE"
+    status: "Ready to be adopted!"
   }
 ];
 
