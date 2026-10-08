@@ -1,22 +1,22 @@
 const birds = [
   {
-    name: "Brute",
-    age: "Age Unknown",
-    sex: "Male",
-    tags: ["Assumed Male", "Unsexed", "Single"],
-    image: "birds/images/brutepic.jpg",
-    link: "birds/brute.html",
-    status: "Adopted!"
-  },
-  {
     name: "Ranch",
     age: "2 months old",
-    sex: "Male",
+    sex: "Unsexed",
     tags: ["Unsexed", "Single"],
     image: "birds/images/ranchpic.jpg",
     link: "birds/ranch.html",
     status: "Ready to be adopted!"
-  }
+  },
+  {
+    name: "Caviar",
+    age: "Age Unknown",
+    sex: "Unsexed",
+    tags: ["Unsexed", "Single"],
+    image: "birds/images/caviar.jpg",
+    link: "birds/caviar.html",
+    status: "Ready to be adopted!"
+  },
 ];
 
 function el(tag, className, text) {
