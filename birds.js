@@ -13,7 +13,7 @@ const birds = [
     age: "Age Unknown",
     sex: "Unsexed",
     tags: ["Unsexed", "Single"],
-    image: "birds/images/caviar.jpg",
+    image: "birds/images/caviar.png",
     link: "birds/caviar.html",
     status: "Ready to be adopted!"
   },
