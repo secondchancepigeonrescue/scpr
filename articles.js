@@ -75,6 +75,15 @@ const posts = [
     excerpt: "Not every avian vet knows pigeons. Here's how to find one before an emergency, the questions to ask when screening them, the red flags to watch for, and what to know about paying for care.",
     link: "blog/finding-a-vet-for-your-pigeon.html",
     image: "blog/images/findingavet.jpg"
+  },
+  {
+    title: "Calcium & Vitamin D3",
+    date: "October 8, 2026",
+    tags: ["pigeon care", "rescue & health"],
+    keywords: ["nutrition", "health", "supplement", "supplements", "calcium", "vitamin d", "d3", "uvb", "multivitamin", "grit", "phosphorus", "hen", "hens", "egg", "eggs", "egg binding", "laying", "kidney", "morning bird", "calcivet", "vetafarm"],
+    excerpt: "Calcium and vitamin D3 go hand in hand, and both are especially important for hens. We cover what each one does, what happens with too little or too much, and how to supplement them.",
+    link: "blog/calcium-and-vitamin-d3.html",
+    image: "blog/images/calciumandd3.webp"
   }
 ];
 
