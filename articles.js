@@ -84,6 +84,16 @@ const posts = [
     excerpt: "Calcium and vitamin D3 go hand in hand, and both are especially important for hens. We cover what each one does, what happens with too little or too much, and how to supplement them.",
     link: "blog/calcium-and-vitamin-d3.html",
     image: "blog/images/calciumandd3.webp"
+  },
+  {
+    title: "We can't save everybody.",
+    date: "October 8, 2026",
+    tags: ["stories"],
+    keywords: ["story", "rescue", "rehab", "rehabilitation", "loss", "grief", "korys", "violet", "racer", "racing pigeon", "derby city pigeon rescue", "breeding", "rescues"],
+    excerpt: "My first intake was a lost racer named Korys, and he passed within hours of arriving. On the losses that come with rescue, and why we talk about them.",
+    link: "blog/we-cant-save-everybody.html",
+    image: "blog/images/wecantsaveeverybody.webp",
+    imagePosition: "center 55%"
   }
 ];
 
@@ -99,6 +109,10 @@ const featured = [
   {
     title: "Seeds & Pellets: An Overview",
     summary: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be."
+  },
+  {
+    title: "We can't save everybody.",
+    summary: "My first intake was a lost racer named Korys, and he passed within hours of arriving. On the losses that come with rescue, and why we talk about them."
   }
 ];
 
