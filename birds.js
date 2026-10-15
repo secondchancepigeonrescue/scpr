@@ -1,14 +1,5 @@
 const birds = [
   {
-    name: "Ranch",
-    age: "2 months old",
-    sex: "Unsexed",
-    tags: ["Unsexed", "Single"],
-    image: "birds/images/ranchpic.jpg",
-    link: "birds/ranch.html",
-    status: "Ready to be adopted!"
-  },
-  {
     name: "Caviar",
     age: "Age Unknown",
     sex: "Unsexed",
