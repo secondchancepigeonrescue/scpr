@@ -15,6 +15,8 @@
     --status-adopted: #c0392b;
     --banner-bg: #d32f2f;
     --banner-text: #ffffff;
+    --card-bg: #f3f0f7;
+    --card-featured-bg: #e3deea;
 
     --font-heading: "Oswald", "Arial Narrow", sans-serif;
     --font-body: "Mulish", Arial, sans-serif;
@@ -38,6 +40,8 @@
     --status-adopted: #ff8578;
     --banner-bg: #c62828;
     --banner-text: #ffffff;
+    --card-bg: #2a2335;
+    --card-featured-bg: #362d45;
 }
 
 /* =========================
@@ -1842,5 +1846,69 @@ nav {
     .theme-fade *::after,
     .dropdown-menu {
         transition: none !important;
+    }
+}
+
+/* =========================
+   15. DONATE
+   One card per donation amount, with what it pays for.
+========================= */
+
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.donate-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    padding: 22px 22px 24px 22px;
+}
+
+.donate-card.featured {
+    background-color: var(--card-featured-bg);
+    border-color: var(--accent);
+}
+
+.donate-amount {
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--accent);
+    margin: 0 0 12px 0;
+}
+
+.donate-card h3 {
+    font-size: 21px;
+    color: var(--heading);
+    margin-bottom: 8px;
+}
+
+.donate-card p:last-child {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.donate-note {
+    margin: 28px 0 0 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+@media (max-width: 1000px) {
+
+    .donate-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .donate-grid {
+        grid-template-columns: 1fr;
     }
 }

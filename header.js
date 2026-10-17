@@ -23,11 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
         <nav>
           <div class="nav-links" id="nav-links">
             <a href="${SITE}index.html">HOME</a>
-            <a href="${SITE}about.html">ABOUT</a>
-            <div class="dropdown" id="birds-dropdown">
+            <div class="dropdown" data-pages="about.html FAQ.html donate.html">
+              <div class="dropdown-top">
+                <a href="${SITE}about.html" class="dropdown-label">ABOUT</a>
+                <button type="button" class="dropdown-toggle" aria-label="Show about pages" aria-expanded="false">&#9662;</button>
+              </div>
+              <div class="dropdown-menu">
+                <a href="${SITE}about.html">ABOUT US</a>
+                <a href="${SITE}FAQ.html">FAQS</a>
+                <a href="${SITE}donate.html">DONATE</a>
+              </div>
+            </div>
+            <div class="dropdown" data-pages="birds.html foster.html adopt.html">
               <div class="dropdown-top">
                 <a href="${SITE}birds.html" class="dropdown-label">BIRDS</a>
-                <button type="button" class="dropdown-toggle" id="birds-toggle" aria-label="Show bird pages" aria-expanded="false">&#9662;</button>
+                <button type="button" class="dropdown-toggle" aria-label="Show bird pages" aria-expanded="false">&#9662;</button>
               </div>
               <div class="dropdown-menu">
                 <a href="${SITE}birds.html">BIRDS</a>
@@ -35,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${SITE}adopt.html">ADOPT</a>
               </div>
             </div>
-            <a href="${SITE}FAQ.html">FAQ</a>
             <a href="${SITE}articles.html">ARTICLES</a>
             <a href="${SITE}contact.html">CONTACT</a>
             <a href="${SITE}apply.html" class="nav-cta">APPLY</a>
@@ -64,22 +73,25 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.setAttribute("aria-expanded", isOpen);
   });
 
-  // Birds dropdown: the arrow opens and closes it (needed on touch screens)
-  const dropdown = document.getElementById("birds-dropdown");
-  const dropdownToggle = document.getElementById("birds-toggle");
+  // Dropdowns: the arrow opens and closes each one (needed on touch screens)
+  const dropdowns = document.querySelectorAll("#nav-links .dropdown");
 
-  dropdownToggle.addEventListener("click", function (event) {
-    event.stopPropagation();
-    const isOpen = dropdown.classList.toggle("open");
-    dropdownToggle.setAttribute("aria-expanded", isOpen);
-  });
+  dropdowns.forEach(dropdown => {
+    const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
 
-  // Close the dropdown when tapping or clicking anywhere else
-  document.addEventListener("click", function (event) {
-    if (!dropdown.contains(event.target)) {
-      dropdown.classList.remove("open");
-      dropdownToggle.setAttribute("aria-expanded", "false");
-    }
+    dropdownToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      const isOpen = dropdown.classList.toggle("open");
+      dropdownToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Close the dropdown when tapping or clicking anywhere else
+    document.addEventListener("click", function (event) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("open");
+        dropdownToggle.setAttribute("aria-expanded", "false");
+      }
+    });
   });
 
   // Light / dark button: remembers the visitor's choice
@@ -127,10 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Underline the top BIRDS link on any page inside the dropdown
-  if (["birds.html", "foster.html", "adopt.html"].includes(currentPage)) {
-    document.querySelector(".dropdown-label").classList.add("selected");
-  }
+  // Underline a dropdown's top link (ABOUT, BIRDS) on any page inside it
+  dropdowns.forEach(dropdown => {
+    if (dropdown.dataset.pages.split(" ").includes(currentPage)) {
+      dropdown.querySelector(".dropdown-label").classList.add("selected");
+    }
+  });
 
   // Scroll reveal: blocks fade in and rise slightly as they come into view.
   // Skipped for visitors whose device is set to reduce motion.
