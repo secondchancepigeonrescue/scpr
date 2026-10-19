@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${SITE}donate.html">DONATE</a>
               </div>
             </div>
-            <div class="dropdown" data-pages="birds.html foster.html adopt.html">
+            <div class="dropdown" data-pages="birds.html foster.html adopt.html care-guide.html">
               <div class="dropdown-top">
                 <a href="${SITE}birds.html" class="dropdown-label">BIRDS</a>
                 <button type="button" class="dropdown-toggle" aria-label="Show bird pages" aria-expanded="false">&#9662;</button>
@@ -43,10 +43,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="${SITE}birds.html">BIRDS</a>
                 <a href="${SITE}foster.html">FOSTER</a>
                 <a href="${SITE}adopt.html">ADOPT</a>
+                <a href="${SITE}care-guide.html">CARE GUIDE</a>
               </div>
             </div>
             <a href="${SITE}articles.html">ARTICLES</a>
             <a href="${SITE}contact.html">CONTACT</a>
+            <a href="${SITE}discord.html">DISCORD</a>
             <a href="${SITE}apply.html" class="nav-cta">APPLY</a>
           </div>
 

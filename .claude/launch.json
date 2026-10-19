@@ -9,6 +9,15 @@
         "cd /private/tmp/claude-501/-Users-marilynn-Downloads-scpr-main/032bb9b5-872c-4b5c-a69e-d1995035e649/scratchpad/site && exec python3 -m http.server 8123"
       ],
       "port": 8123
+    },
+    {
+      "name": "site-local",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-marilynn-Downloads-scpr-main/f01273e3-741a-4b09-b9c1-6324bee7ad2d/scratchpad/site && exec python3 -m http.server ${PORT:-8124}"
+      ],
+      "port": 8124
     }
   ]
 }
