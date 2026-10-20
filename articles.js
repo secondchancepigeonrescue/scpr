@@ -13,15 +13,6 @@
 
 const posts = [
   {
-    title: "SCPR's Guide to Pigeon Care",
-    date: "March 9, 2026",
-    tags: ["pigeon care"],
-    keywords: ["getting started", "nutrition", "housing", "care", "diet", "seed", "feed", "grit", "cage", "enclosure", "aviary", "toys", "beginner"],
-    excerpt: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more.",
-    link: "blog/scprs-guide-to-pigeon-care.html",
-    image: "blog/images/pigeoncareguide.jpg"
-  },
-  {
     title: "Are Pigeons Right For You?",
     date: "March 9, 2026",
     tags: ["other topics"],
@@ -102,10 +93,6 @@ const posts = [
 // To feature more than one, copy a { ... } block and separate them with commas.
 // With two or more, they turn into a gallery with arrows automatically.
 const featured = [
-  {
-    title: "SCPR's Guide to Pigeon Care",
-    summary: "A basic guide to taking care of pet pigeons, brought to you by Second Chance Pigeon Rescue. Includes diet and nutrition, enrichment, housing and enclosures, and more."
-  },
   {
     title: "Seeds & Pellets: An Overview",
     summary: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be."
