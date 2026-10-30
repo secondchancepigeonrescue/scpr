@@ -2,6 +2,15 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "repo",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /private/tmp/claude-501/-Users-marilynn--claude-spares-spare-DcYYtw/29a4f33d-2eac-4ba6-a912-cd849d67f69d/scratchpad/site && exec python3 -m http.server 8125"
+      ],
+      "port": 8125
+    },
+    {
       "name": "site",
       "runtimeExecutable": "sh",
       "runtimeArgs": [

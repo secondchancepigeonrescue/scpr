@@ -85,6 +85,16 @@ const posts = [
     link: "blog/we-cant-save-everybody.html",
     image: "blog/images/wecantsaveeverybody.webp",
     imagePosition: "center 55%"
+  },
+  {
+    title: "Celebrating Our 2026 Rescues",
+    date: "October 30, 2026",
+    tags: ["stories"],
+    keywords: ["story", "rescue", "rescues", "2026", "year in review", "brute", "ranch", "caviar", "palomacy", "adopt", "adoption", "thank you"],
+    excerpt: "A look back at Brute, Ranch, and Caviar, the three pigeons who got their second chance in 2026, from the first call for help to where they are now.",
+    link: "blog/celebrating-our-2026-rescues.html",
+    image: "sitepics/threebirds.jpg",
+    imagePosition: "center 45%"
   }
 ];
 
@@ -93,6 +103,10 @@ const posts = [
 // To feature more than one, copy a { ... } block and separate them with commas.
 // With two or more, they turn into a gallery with arrows automatically.
 const featured = [
+  {
+    title: "Celebrating Our 2026 Rescues",
+    summary: "A look back at Brute, Ranch, and Caviar, the three pigeons who got their second chance in 2026, from the first call for help to where they are now."
+  },
   {
     title: "Seeds & Pellets: An Overview",
     summary: "Seeds, pellets, or both? We go over the protein, fat, and fiber pet pigeons need, the seed mixes and pellets we recommend, and why pellets aren't the villain they're made out to be."

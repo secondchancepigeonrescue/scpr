@@ -1341,6 +1341,60 @@ nav {
     text-align: center;
 }
 
+/* Slideshow of rescues: wide before-and-after photos, each opening full size.
+   gallery.js shows one at a time and adds the arrows and dots (featured-nav). */
+.rescue-gallery {
+    display: grid;
+    margin: 20px 0 0 0;
+}
+
+.rescue-card {
+    grid-area: 1 / 1;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background-color: var(--surface-soft);
+    transition: opacity 0.3s ease, visibility 0.3s ease, border-color 0.2s ease;
+}
+
+.rescue-card.off {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rescue-card:hover {
+    border-color: var(--accent);
+}
+
+.rescue-photo {
+    aspect-ratio: 12 / 5;
+    overflow: hidden;
+}
+
+.rescue-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.rescue-gallery .rescue-card h3 {
+    margin: 14px 18px 2px 18px;
+}
+
+.rescue-gallery .rescue-card p {
+    margin: 0 18px 16px 18px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.rescue-gallery + .featured-nav {
+    margin: 14px 0 30px 0;
+}
+
 /* Fold-out sections */
 .dropdown-section {
     border: 1px solid var(--border);
